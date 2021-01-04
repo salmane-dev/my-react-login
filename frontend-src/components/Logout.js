@@ -1,6 +1,4 @@
 import React, { useEffect } from "react"
-import { Link } from "react-router-dom"
-import Home from "./Home"  
 
 
 function Logout(props) {
