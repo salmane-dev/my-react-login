@@ -23,7 +23,7 @@ function Secret() {
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
-        {secret.status === "failure" && <div className="alert alert-danger">That is incorrect. Try again.</div>}
+        {secret.status === "failure" && <div className="alert danger">That is incorrect. Try again.</div>}
         <label for="exampleInputEmail1" className="form-label">
           Username
         </label>
