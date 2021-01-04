@@ -8,14 +8,16 @@ function Secret() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    const response = await Axios.post("/secret", { username, password })
+    const response = await Axios.post("/login", { username, password })
     setSecret(response.data)
+   
   }
 
-  if (secret.status === "success") {
+  if (secret.status === "success") { 
+    localStorage.setItem("Token", secret.token)
     return (
       <div className="py-5 text-center">
-        <h1>{secret.message}</h1>
+        <h1>{secret.message} </h1>
       </div>
     )
   }

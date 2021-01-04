@@ -8,8 +8,6 @@ function Home() {
   return (
     <div>
       <h2 className="display-4">Welcome to the homepage!</h2>
-      <p className="lead">. </p>
-      
     </div>
   )
 }
