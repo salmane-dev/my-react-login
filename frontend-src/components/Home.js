@@ -2,8 +2,9 @@ import React, { useEffect } from "react"
 
 function Home() {
   useEffect(() => {
-    document.title = "My-React-Login"
+    document.title = "My React Login"
   }, [])
+
 
   return (
     <div>

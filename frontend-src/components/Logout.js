@@ -1,17 +1,17 @@
 import React, { useEffect } from "react"
+import { Link } from "react-router-dom"
+import Home from "./Home"  
 
-function Logout() {
-  useEffect(() => {
-    document.title = "My React Login"
-  }, [])
 
-  console.log("logout component")
+function Logout(props) {
+  
+      if(localStorage.getItem('Token')) {
+        props.logoutfn()
+      } 
 
   return (
     <div>
-      <h2 className="display-4">Comming soon!!</h2>
-      <p className="lead">. </p>
-      
+      <h2 className="display-4">GoodBye!</h2> 
     </div>
   )
 }

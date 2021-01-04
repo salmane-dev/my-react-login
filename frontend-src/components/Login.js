@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react"
 import Axios from "axios"
 
-function Secret() {
+function Login(props) {
+
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-  const [secret, setSecret] = useState("")
+  const [login, setLogin] = useState("")
 
   async function handleSubmit(e) {
+  
     e.preventDefault()
     const response = await Axios.post("/login", { username, password })
-    setSecret(response.data)
-   
-  }
+    setLogin(response.data) 
+    }
 
-  if (secret.status === "success") { 
-    localStorage.setItem("Token", secret.token)
+  if (login.status === "success") { 
+    localStorage.setItem("Token", login.token) 
+    props.handler() 
     return (
       <div className="py-5 text-center">
-        <h1>{secret.message} </h1>
+        <h1>{login.message} </h1>
       </div>
     )
   }
@@ -25,7 +27,7 @@ function Secret() {
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
-        {secret.status === "failure" && <div className="alert danger">That is incorrect. Try again.</div>}
+        {login.status === "failure" && <div className="alert text-danger">That is incorrect. Try again.</div>}
         <label for="exampleInputEmail1" className="form-label">
           Username
         </label>
@@ -44,4 +46,4 @@ function Secret() {
   )
 }
 
-export default Secret
+export default Login
