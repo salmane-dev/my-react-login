@@ -10,6 +10,9 @@ function Login(props) {
   async function handleSubmit(e) {
   
     e.preventDefault()
+    //to use the live heroku server
+    //const response = await Axios.post("https://my-react-login.herokuapp.com/login", { username, password })
+    
     const response = await Axios.post("/login", { username, password })
     setLogin(response.data) 
     }
@@ -31,13 +34,18 @@ function Login(props) {
         <label for="exampleInputEmail1" className="form-label">
           Username
         </label>
-        <input onChange={e => setUsername(e.target.value)} type="text" autoComplete="off" className="form-control" id="exampleInputEmail1" />
+        <input onChange={e => setUsername(e.target.value)}
+              type="text"
+              autoComplete="off" 
+              className="form-control w-50"
+              style={{inlinecss}} 
+              id="exampleInputEmail1" />
       </div>
       <div className="mb-3">
         <label for="exampleInputPassword1" className="form-label">
           Password
         </label>
-        <input onChange={e => setPassword(e.target.value)} type="password" className="form-control" id="exampleInputPassword1" />
+        <input onChange={e => setPassword(e.target.value)} type="password" className="form-control w-50" id="exampleInputPassword1" />
       </div>
       <button type="submit" className="btn btn-primary">
         Submit
@@ -45,5 +53,7 @@ function Login(props) {
     </form>
   )
 }
+
+const inlinecss="minWith:400px"
 
 export default Login
