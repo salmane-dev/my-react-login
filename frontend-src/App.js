@@ -14,7 +14,7 @@ function App() {
             
             <li className="nav-item">
               <NavLink to="/secret" className="nav-link" activeClassName="active">
-                Secret
+                Login
               </NavLink>
             </li>
     
