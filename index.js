@@ -1,7 +1,6 @@
 const path = require("path")
 const express = require("express")
 const app = express()
-const cors = require("cors")
 
 // parse incoming traditional HTML form submits
 app.use(express.urlencoded({ extended: false }))
