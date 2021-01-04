@@ -8,8 +8,8 @@ function Home() {
   return (
     <div>
       <h2 className="display-4">Welcome to the homepage!</h2>
-      <p className="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quasi natus fugit ab laudantium dolores, dicta blanditiis sit eum perferendis minima sunt repudiandae voluptates tempore. Fuga dicta ipsa beatae vel?</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.   </p>
+      <p className="lead">. </p>
+      
     </div>
   )
 }
