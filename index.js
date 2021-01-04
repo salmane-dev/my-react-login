@@ -6,6 +6,7 @@ const app = express()
 app.use(express.urlencoded({ extended: false }))
 
 // parse incoming JSON payloads
+
 app.use(express.json())
 
 app.use(express.static(path.join(__dirname, "public")))
