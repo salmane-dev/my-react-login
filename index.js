@@ -13,6 +13,7 @@ const jwtsecret = "My secret string of text"
 app.use(express.json())
 
 //enable cores
+cors({credentials: true, origin: true})
 app.use(cors())
 
 
