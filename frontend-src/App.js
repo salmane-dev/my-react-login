@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <header className="bg-light pt-3">
         <div className="container">
-          <h1 className="display-1">Our Amazing App!</h1>
+          <h1 className="display-1">My React Login </h1>
           <ul className="nav nav-tabs">
             <li className="nav-item">
               <NavLink to="/animal/meowsalot" className="nav-link" activeClassName="active">
