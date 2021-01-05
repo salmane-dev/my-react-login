@@ -16,16 +16,13 @@ app.use(express.json())
 cors({credentials: true, origin: true})
 app.use(cors())
 
-
 app.use(express.static(path.join(__dirname, "public")))
-
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"))
 })
- 
 
-app.post("/login", (req, res) => {
+app.post("/api/login", (req, res) => {
   if (req.body.username === "user44" && req.body.password === "AZERTY") {
     res.json({ status: "success", message: "user44 loged in successfully",  token: jwt.sign({ name: "User 44", id: 44 }, jwtsecret) })
   } else {
