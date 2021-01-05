@@ -7,10 +7,10 @@ import Logout from "./components/Logout"
 //import { construct } from "core-js/fn/reflect"
 
 function App(props) {
-  
+
   let isAuth = localStorage.getItem("Token")
   let loginlink = '/login'
-  
+
   const [login, setLogin] = useState(isAuth? 'Logout' : 'Login')
   
   if(isAuth && isAuth !== 'undefined') 
@@ -28,6 +28,7 @@ function logoutfn(){
   localStorage.removeItem('Token')
   setLogin("Login")
   loginlink = '/login'
+   
 }
 
 

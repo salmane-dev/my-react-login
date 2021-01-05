@@ -7,7 +7,7 @@ function Logout(props) {
         props.logoutfn()
       } 
 
-  return (
+  return(
     <div>
       <h2 className="display-4">GoodBye!</h2> 
     </div>

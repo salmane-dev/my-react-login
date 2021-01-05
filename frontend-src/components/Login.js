@@ -7,6 +7,8 @@ function Login(props) {
   const [password, setPassword] = useState("")
   const [login, setLogin] = useState("")
 
+
+
   async function handleSubmit(e) {
   
     e.preventDefault()
@@ -26,12 +28,19 @@ function Login(props) {
       </div>
     )
   }
+  if(localStorage.getItem('Token')){  
+    return (
+      <div className="py-5 text-center">
+        <h1>You are already in </h1>
+      </div>
+    )
+  }
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
         {login.status === "failure" && <div className="alert text-danger">That is incorrect. Try again.</div>}
-        <label for="exampleInputEmail1" className="form-label">
+        <label htmlFor="exampleInputEmail1" className="form-label">
           Username 
         </label>
         <input onChange={e => setUsername(e.target.value)}
@@ -42,7 +51,7 @@ function Login(props) {
               id="exampleInputEmail1" />
       </div>
       <div className="mb-3">
-        <label for="exampleInputPassword1" className="form-label">
+        <label htmlFor="exampleInputPassword1" className="form-label">
           Password 
         </label>
         <input onChange={e => setPassword(e.target.value)} type="password" className="form-control w-50" id="exampleInputPassword1" />
